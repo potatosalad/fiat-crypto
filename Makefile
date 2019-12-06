@@ -294,6 +294,13 @@ curve25519_32.c:
 	$(HIDE)($(TIMER_FULL) $(UNSATURATED_SOLINAS) --static '25519' '10' '2^255 - 19' '32' $(FUNCTIONS_FOR_25519) && touch $@.ok) > $@.tmp
 	$(HIDE)rm $@.ok && mv $@.tmp $@
 
+# 2^255 - 19
+curve25519_16.c:
+	$(SHOW)'SYNTHESIZE > $@'
+	$(HIDE)rm -f $@.ok
+	$(HIDE)($(TIMER_FULL) $(UNSATURATED_SOLINAS) --static '25519' '10' '2^255 - 19' '16' $(FUNCTIONS_FOR_25519) && touch $@.ok) > $@.tmp
+	$(HIDE)rm $@.ok && mv $@.tmp $@
+
 # 2^521 - 1
 p521_64.c:
 	$(SHOW)'SYNTHESIZE > $@'
