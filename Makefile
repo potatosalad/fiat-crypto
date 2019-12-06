@@ -95,7 +95,7 @@ ifneq ($(filter pre-standalone,$(MAKECMDGOALS)),)
 PRE_STANDALONE_VOFILES := $(call vo_closure,$(PRE_STANDALONE_PRE_VOFILES))
 endif
 
-UNSATURATED_SOLINAS_C_FILES := curve25519_64.c curve25519_32.c p521_64.c p521_32.c p448_solinas_64.c # p224_solinas_64.c
+UNSATURATED_SOLINAS_C_FILES := curve25519_64.c curve25519_32.c curve25519_16.c p521_64.c p521_32.c p448_solinas_64.c # p224_solinas_64.c
 WORD_BY_WORD_MONTGOMERY_C_FILES := p256_64.c p256_32.c p384_64.c p384_32.c secp256k1_64.c secp256k1_32.c p224_64.c p224_32.c p434_64.c # p434_32.c
 ALL_C_FILES := $(UNSATURATED_SOLINAS_C_FILES) $(WORD_BY_WORD_MONTGOMERY_C_FILES)
 RS_DIR := fiat-rust/src/
